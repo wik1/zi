@@ -41,6 +41,16 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+/* unifactor change ".env" path for better instalation
+ */
+$app->useEnvironmentPath(base_path('../'));
+
+# new storage path
+# base_path() -> returns root path
+$path_storage = base_path() . "../storage";
+$app->useStoragePath(base_path('../storage'));
+
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
